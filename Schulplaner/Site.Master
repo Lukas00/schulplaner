@@ -57,7 +57,7 @@
                         <li><a runat="server" href="~/Contact">Neuer Eintrag</a></li>
                     </ul>
                     <ul class="nav navbar-nav" style="float:right">
-                        <li><a runat="server" href="~/Login">Login</a></li>
+                        <li runat="server" id="login_name"><a runat="server" href="~/Login">Login</a></li>
                     </ul>
                 </div>
             </div>
