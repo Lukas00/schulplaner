@@ -12,13 +12,19 @@ namespace Schulplaner
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            currentUser.Text = HttpContext.Current.User.Identity.Name;
-
+            if(Request.Cookies["userName"] != null)
+            {
+                currentUser.Text = Server.HtmlEncode(Request.Cookies["userName"].Value);
+            } else
+            {
+                currentUser.Text = "fehler";
+            }
         }
 
         protected void Logout_Click(object sender, EventArgs e)
         {
             FormsAuthentication.SignOut();
+            Response.Cookies["userName"].Expires = DateTime.Now.AddDays(-1);
             Response.Redirect("~/");
         }
 

@@ -349,6 +349,7 @@
     <Compile Include="event.aspx.designer.cs">
       <DependentUpon>event.aspx</DependentUpon>
     </Compile>
+    <Compile Include="getUser.cs" />
     <Compile Include="neuerEintrag.aspx.cs">
       <DependentUpon>neuerEintrag.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

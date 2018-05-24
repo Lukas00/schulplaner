@@ -39,6 +39,14 @@ namespace Schulplaner
 
                 FormsAuthentication.SetAuthCookie(PW_and_ID[1], true); // Im AuthCookie die ID des Users speichern
 
+                // HttpCookie aCookie = new HttpCookie("userName");
+                Benutzer b = getUser.getBenutzer(Int32.Parse(PW_and_ID[1]));
+                // aCookie.Value = "Hallo"; // b.Vorname + " ich bi so en idiot " + b.Nachname;
+                // aCookie.Expires = DateTime.Now.AddDays(1);
+                // Response.Cookies.Add(aCookie);
+
+                Response.Cookies["userName"].Value = b.Vorname + " inbetween " + b.Nachname;
+                Response.Cookies["userName"].Expires = DateTime.Now.AddDays(1);
 
                 test.Text = PW_and_ID[1];
 
@@ -47,6 +55,8 @@ namespace Schulplaner
             {
                 test.Text = "falsches Passwort oder falscher username";
             }
+
+            Response.Redirect("~/");
 
         }
 
@@ -89,12 +99,5 @@ namespace Schulplaner
 
         }
 
-        protected void Login_func(object sender, EventArgs e)
-        {
-
-
-
-            loginName.Text = "Lukas";
-        }
     }
 }
