@@ -10,51 +10,51 @@
 namespace Schulplaner {
     
     
-    public partial class SiteMaster {
+    public partial class newUser {
         
         /// <summary>
-        /// ScriptManager1-Steuerelement
+        /// email-Steuerelement
         /// </summary>
         /// <remarks>
         /// Automatisch generiertes Feld
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.TextBox email;
         
         /// <summary>
-        /// currentUser-Steuerelement
+        /// password-Steuerelement
         /// </summary>
         /// <remarks>
         /// Automatisch generiertes Feld
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton currentUser;
+        protected global::System.Web.UI.WebControls.TextBox password;
         
         /// <summary>
-        /// Logout-Steuerelement
+        /// vorname-Steuerelement
         /// </summary>
         /// <remarks>
         /// Automatisch generiertes Feld
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Logout;
+        protected global::System.Web.UI.WebControls.TextBox vorname;
         
         /// <summary>
-        /// login-Steuerelement
+        /// B_register-Steuerelement
         /// </summary>
         /// <remarks>
         /// Automatisch generiertes Feld
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton login;
+        protected global::System.Web.UI.WebControls.Button B_register;
         
         /// <summary>
-        /// MainContent-Steuerelement
+        /// test-Steuerelement
         /// </summary>
         /// <remarks>
         /// Automatisch generiertes Feld
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Label test;
     }
 }

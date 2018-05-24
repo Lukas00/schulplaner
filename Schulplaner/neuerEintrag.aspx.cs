@@ -18,15 +18,15 @@ namespace Schulplaner
         protected void Button1_Click(object sender, EventArgs e)
         {
             {//SQL Connection aufbauen
-                SqlConnection con = new SqlConnection("Data Source=DESKTOP-C3AQGLE\\SQLEXPRESS;Initial Catalog=Schulplaner;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                SqlConnection con = new SqlConnection(@"data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\SchulplanerDB.mdf;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;");
 
                 {//Eingabe der Stored Procedure
                     SqlCommand Insertcommand = new SqlCommand("insert into Eintraege(Titel, Beschreibung, TerminStart, TerminEnde) values( @titel , + @beschreibung , @startdatum , @enddatum)", con); //datetime Format YYYY-MM-DD HH:MI:SS
 
                     Insertcommand.Parameters.AddWithValue("@titel", Titel.Text);
                     Insertcommand.Parameters.AddWithValue("@beschreibung", Beschreibung.Text);
-                    Insertcommand.Parameters.AddWithValue("@startdatum", "2018-3-2 6:5:2");
-                    Insertcommand.Parameters.AddWithValue("@enddatum", "2018-3-3 6:5:2");
+                    Insertcommand.Parameters.AddWithValue("@startdatum", "2018-5-1 6:5:2");
+                    Insertcommand.Parameters.AddWithValue("@enddatum", "2018-5-3 6:5:2");
                     //führt das Statement aus
                     con.Open();
 

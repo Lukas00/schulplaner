@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SchulplanerDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Benutzer">
+          <Key>
+            <PropertyRef Name="BenutzerID" />
+          </Key>
+          <Property Name="BenutzerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vorname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nachname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Passwort" Type="nvarchar" MaxLength="64" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Klasse" Type="nvarchar" MaxLength="50" />
+          <Property Name="RollenID" Type="int" />
+        </EntityType>
+        <!--Während der Generierung sind Fehler aufgetreten:
+Warnung 6013: Für Tabelle/Sicht 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\SCHULPLANER\SCHULPLANER\APP_DATA\SCHULPLANERDB.MDF.dbo.Beziehung_Benutzer_Eintraege' ist kein Primärschlüssel definiert, und es konnte kein gültiger Primärschlüssel abgeleitet werden. Diese Tabelle/Sicht wurde ausgeschlossen. Wenn Sie die Entität verwenden möchten, müssen Sie das Schema überprüfen, die richtigen Schlüssel hinzufügen und die Auskommentierung aufheben.
+        <EntityType Name="Beziehung_Benutzer_Eintraege">
+          <Property Name="BenutzerID" Type="int" />
+          <Property Name="EintragsID" Type="int" />
+        </EntityType>-->
+        <!--Während der Generierung sind Fehler aufgetreten:
+Warnung 6013: Für Tabelle/Sicht 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\SCHULPLANER\SCHULPLANER\APP_DATA\SCHULPLANERDB.MDF.dbo.Beziehung_Benutzer_OeffentlicherKalender' ist kein Primärschlüssel definiert, und es konnte kein gültiger Primärschlüssel abgeleitet werden. Diese Tabelle/Sicht wurde ausgeschlossen. Wenn Sie die Entität verwenden möchten, müssen Sie das Schema überprüfen, die richtigen Schlüssel hinzufügen und die Auskommentierung aufheben.
+        <EntityType Name="Beziehung_Benutzer_OeffentlicherKalender">
+          <Property Name="BenutzerID" Type="int" />
+        </EntityType>-->
+        <!--Während der Generierung sind Fehler aufgetreten:
+Warnung 6013: Für Tabelle/Sicht 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\SCHULPLANER\SCHULPLANER\APP_DATA\SCHULPLANERDB.MDF.dbo.Beziehung_OeffentlicheKalender_Eintraege' ist kein Primärschlüssel definiert, und es konnte kein gültiger Primärschlüssel abgeleitet werden. Diese Tabelle/Sicht wurde ausgeschlossen. Wenn Sie die Entität verwenden möchten, müssen Sie das Schema überprüfen, die richtigen Schlüssel hinzufügen und die Auskommentierung aufheben.
+        <EntityType Name="Beziehung_OeffentlicheKalender_Eintraege">
+          <Property Name="KalenderID" Type="int" />
+          <Property Name="EintragsID" Type="int" />
+        </EntityType>-->
+        <EntityType Name="Eintraege">
+          <Key>
+            <PropertyRef Name="EintragsID" />
+          </Key>
+          <Property Name="EintragsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Titel" Type="nvarchar" MaxLength="100" />
+          <Property Name="Beschreibung" Type="nvarchar" MaxLength="200" />
+          <Property Name="TerminStart" Type="datetime" Nullable="false" />
+          <Property Name="TerminEnde" Type="datetime" Nullable="false" />
+          <Property Name="ErinnerungsID" Type="int" />
+        </EntityType>
+        <EntityType Name="Erinnerungen">
+          <Key>
+            <PropertyRef Name="ErinnerungsID" />
+          </Key>
+          <Property Name="ErinnerungsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Zeitpunkt" Type="date" />
+        </EntityType>
+        <EntityType Name="OeffentlicherKalender">
+          <Key>
+            <PropertyRef Name="KalenderID" />
+          </Key>
+          <Property Name="KalenderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rollen">
+          <Key>
+            <PropertyRef Name="RollenID" />
+          </Key>
+          <Property Name="RollenID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Beschreibung" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Während der Generierung sind Fehler aufgetreten:
+Fehler 6004: Auf die Tabelle 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\SCHULPLANER\SCHULPLANER\APP_DATA\SCHULPLANERDB.MDF.dbo.Beziehung_Benutzer_OeffentlicherKalender' wurde durch eine Beziehung verwiesen, die jedoch nicht gefunden wurde.
+        <Association Name="FK__Beziehung__Benut__267ABA7A" />-->
+        <!--Während der Generierung sind Fehler aufgetreten:
+Fehler 6004: Auf die Tabelle 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\SCHULPLANER\SCHULPLANER\APP_DATA\SCHULPLANERDB.MDF.dbo.Beziehung_Benutzer_Eintraege' wurde durch eine Beziehung verwiesen, die jedoch nicht gefunden wurde.
+        <Association Name="FK__Beziehung__Benut__2D27B809" />-->
+        <!--Während der Generierung sind Fehler aufgetreten:
+Fehler 6004: Auf die Tabelle 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\SCHULPLANER\SCHULPLANER\APP_DATA\SCHULPLANERDB.MDF.dbo.Beziehung_Benutzer_Eintraege' wurde durch eine Beziehung verwiesen, die jedoch nicht gefunden wurde.
+        <Association Name="FK__Beziehung__Eintr__2E1BDC42" />-->
+        <!--Während der Generierung sind Fehler aufgetreten:
+Fehler 6004: Auf die Tabelle 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\SCHULPLANER\SCHULPLANER\APP_DATA\SCHULPLANERDB.MDF.dbo.Beziehung_OeffentlicheKalender_Eintraege' wurde durch eine Beziehung verwiesen, die jedoch nicht gefunden wurde.
+        <Association Name="FK__Beziehung__Eintr__30F848ED" />-->
+        <!--Während der Generierung sind Fehler aufgetreten:
+Fehler 6004: Auf die Tabelle 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\SCHULPLANER\SCHULPLANER\APP_DATA\SCHULPLANERDB.MDF.dbo.Beziehung_OeffentlicheKalender_Eintraege' wurde durch eine Beziehung verwiesen, die jedoch nicht gefunden wurde.
+        <Association Name="FK__Beziehung__Kalen__300424B4" />-->
+        <Association Name="FK__Eintraege__Erinn__2B3F6F97">
+          <End Role="Erinnerungen" Type="Self.Erinnerungen" Multiplicity="0..1" />
+          <End Role="Eintraege" Type="Self.Eintraege" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Erinnerungen">
+              <PropertyRef Name="ErinnerungsID" />
+            </Principal>
+            <Dependent Role="Eintraege">
+              <PropertyRef Name="ErinnerungsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SchulplanerDBModelStoreContainer">
+          <EntitySet Name="Benutzer" EntityType="Self.Benutzer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Eintraege" EntityType="Self.Eintraege" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Erinnerungen" EntityType="Self.Erinnerungen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OeffentlicherKalender" EntityType="Self.OeffentlicherKalender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rollen" EntityType="Self.Rollen" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Eintraege__Erinn__2B3F6F97" Association="Self.FK__Eintraege__Erinn__2B3F6F97">
+            <End Role="Erinnerungen" EntitySet="Erinnerungen" />
+            <End Role="Eintraege" EntitySet="Eintraege" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SchulplanerDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Benutzer">
+          <Key>
+            <PropertyRef Name="BenutzerID" />
+          </Key>
+          <Property Name="BenutzerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vorname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nachname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Passwort" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Klasse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RollenID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Eintraege">
+          <Key>
+            <PropertyRef Name="EintragsID" />
+          </Key>
+          <Property Name="EintragsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Beschreibung" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TerminStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TerminEnde" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ErinnerungsID" Type="Int32" />
+          <NavigationProperty Name="Erinnerungen" Relationship="Self.FK__Eintraege__Erinn__2B3F6F97" FromRole="Eintraege" ToRole="Erinnerungen" />
+        </EntityType>
+        <EntityType Name="Erinnerungen">
+          <Key>
+            <PropertyRef Name="ErinnerungsID" />
+          </Key>
+          <Property Name="ErinnerungsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Zeitpunkt" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Eintraege" Relationship="Self.FK__Eintraege__Erinn__2B3F6F97" FromRole="Erinnerungen" ToRole="Eintraege" />
+        </EntityType>
+        <EntityType Name="OeffentlicherKalender">
+          <Key>
+            <PropertyRef Name="KalenderID" />
+          </Key>
+          <Property Name="KalenderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Rollen">
+          <Key>
+            <PropertyRef Name="RollenID" />
+          </Key>
+          <Property Name="RollenID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Beschreibung" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__Eintraege__Erinn__2B3F6F97">
+          <End Role="Erinnerungen" Type="Self.Erinnerungen" Multiplicity="0..1" />
+          <End Role="Eintraege" Type="Self.Eintraege" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Erinnerungen">
+              <PropertyRef Name="ErinnerungsID" />
+            </Principal>
+            <Dependent Role="Eintraege">
+              <PropertyRef Name="ErinnerungsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SchulplanerDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Benutzer" EntityType="Self.Benutzer" />
+          <EntitySet Name="Eintraege" EntityType="Self.Eintraege" />
+          <EntitySet Name="Erinnerungen" EntityType="Self.Erinnerungen" />
+          <EntitySet Name="OeffentlicherKalender" EntityType="Self.OeffentlicherKalender" />
+          <EntitySet Name="Rollen" EntityType="Self.Rollen" />
+          <AssociationSet Name="FK__Eintraege__Erinn__2B3F6F97" Association="Self.FK__Eintraege__Erinn__2B3F6F97">
+            <End Role="Erinnerungen" EntitySet="Erinnerungen" />
+            <End Role="Eintraege" EntitySet="Eintraege" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SchulplanerDBModelStoreContainer" CdmEntityContainer="SchulplanerDBEntities">
+          <EntitySetMapping Name="Benutzer">
+            <EntityTypeMapping TypeName="SchulplanerDBModel.Benutzer">
+              <MappingFragment StoreEntitySet="Benutzer">
+                <ScalarProperty Name="BenutzerID" ColumnName="BenutzerID" />
+                <ScalarProperty Name="Vorname" ColumnName="Vorname" />
+                <ScalarProperty Name="Nachname" ColumnName="Nachname" />
+                <ScalarProperty Name="Passwort" ColumnName="Passwort" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Klasse" ColumnName="Klasse" />
+                <ScalarProperty Name="RollenID" ColumnName="RollenID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Eintraege">
+            <EntityTypeMapping TypeName="SchulplanerDBModel.Eintraege">
+              <MappingFragment StoreEntitySet="Eintraege">
+                <ScalarProperty Name="EintragsID" ColumnName="EintragsID" />
+                <ScalarProperty Name="Titel" ColumnName="Titel" />
+                <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+                <ScalarProperty Name="TerminStart" ColumnName="TerminStart" />
+                <ScalarProperty Name="TerminEnde" ColumnName="TerminEnde" />
+                <ScalarProperty Name="ErinnerungsID" ColumnName="ErinnerungsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Erinnerungen">
+            <EntityTypeMapping TypeName="SchulplanerDBModel.Erinnerungen">
+              <MappingFragment StoreEntitySet="Erinnerungen">
+                <ScalarProperty Name="ErinnerungsID" ColumnName="ErinnerungsID" />
+                <ScalarProperty Name="Zeitpunkt" ColumnName="Zeitpunkt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OeffentlicherKalender">
+            <EntityTypeMapping TypeName="SchulplanerDBModel.OeffentlicherKalender">
+              <MappingFragment StoreEntitySet="OeffentlicherKalender">
+                <ScalarProperty Name="KalenderID" ColumnName="KalenderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rollen">
+            <EntityTypeMapping TypeName="SchulplanerDBModel.Rollen">
+              <MappingFragment StoreEntitySet="Rollen">
+                <ScalarProperty Name="RollenID" ColumnName="RollenID" />
+                <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

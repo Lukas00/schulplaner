@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Eigene ASP.NET-Anwendung</title>
+    <title><%: Page.Title %></title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -19,7 +19,7 @@
 </head>
 <body>
     <form runat="server">
-        <asp:ScriptManager runat="server">
+        <asp:ScriptManager runat="server" ID="ScriptManager1" EnablePageMethods="true">
             <Scripts>
                 <%--Informationen zur Bündelung von Skripts in ScriptManager finden Sie unter https://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework-Skripts--%>
@@ -54,11 +54,19 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Kalender</a></li>
                         <li><a runat="server" href="~/About">Öffentliche Kalender</a></li>
-                        <li><a runat="server" href="~/Contact">Neuer Eintrag</a></li>
+                        <li><a runat="server" href="~/neuerEintrag">Neuer Eintrag</a></li>
                     </ul>
-                    <ul class="nav navbar-nav" style="float:right">
-                        <li runat="server" id="login_name"><a runat="server" href="~/Login">Login</a></li>
-                    </ul>
+                    <ul class="nav navbar-nav navbar-right"> <!-- Wenn eingeloggt, Logout anzeigen, sonst Login -->
+                        <%if(HttpContext.Current.User.Identity.IsAuthenticated)
+                        {%>
+                            <li> <asp:LinkButton ID="currentUser" runat="server" CausesValidation="false" OnClick="toProfile"></asp:LinkButton> </li>
+                            <li> <asp:LinkButton ID="Logout" runat="server" CausesValidation="False" onclick="Logout_Click" style="text-align: right">Logout</asp:LinkButton></li>
+                        <%}
+                        else
+                        {%>
+                            <li><asp:LinkButton ID="login" runat="server" PostBackUrl="~/Login.aspx">Login</asp:LinkButton> </li>
+                        <%}%>
+                        </ul>
                 </div>
             </div>
         </div>
@@ -67,7 +75,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Meine ASP.NET-Anwendung</p>
+                <p>&copy; <%: DateTime.Now.Year %> Schulplaner</p>
             </footer>
         </div>
 
