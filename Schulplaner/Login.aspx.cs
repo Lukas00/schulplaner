@@ -50,13 +50,15 @@ namespace Schulplaner
 
                 test.Text = PW_and_ID[1];
 
+                Response.Redirect("~/");
+
             }
             else
             {
-                test.Text = "falsches Passwort oder falscher username";
+                test.Text = "Falsches Passwort oder falscher Benutzername";
             }
 
-            Response.Redirect("~/");
+            
 
         }
 

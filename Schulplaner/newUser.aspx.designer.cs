@@ -40,6 +40,33 @@ namespace Schulplaner {
         protected global::System.Web.UI.WebControls.TextBox vorname;
         
         /// <summary>
+        /// nachname-Steuerelement
+        /// </summary>
+        /// <remarks>
+        /// Automatisch generiertes Feld
+        /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nachname;
+        
+        /// <summary>
+        /// class-Steuerelement
+        /// </summary>
+        /// <remarks>
+        /// Automatisch generiertes Feld
+        /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox @class;
+        
+        /// <summary>
+        /// role-Steuerelement
+        /// </summary>
+        /// <remarks>
+        /// Automatisch generiertes Feld
+        /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox role;
+        
+        /// <summary>
         /// B_register-Steuerelement
         /// </summary>
         /// <remarks>

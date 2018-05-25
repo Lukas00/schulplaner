@@ -15,5 +15,7 @@ namespace Schulplaner
     public partial class OeffentlicherKalender
     {
         public int KalenderID { get; set; }
+        public string Name { get; set; }
+        public string Beschreibung { get; set; }
     }
 }

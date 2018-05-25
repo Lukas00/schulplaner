@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,11 +8,10 @@ using System.Web.UI.WebControls;
 
 namespace Schulplaner
 {
-    public partial class _Default : Page
+    public partial class oeffentlicherKalender : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             HashSet<Eintraege> events = new HashSet<Eintraege>();
 
 
@@ -31,9 +29,9 @@ namespace Schulplaner
                 // The following code uses an SqlCommand based on the SqlConnection.
                 //
                 using (SqlCommand command = new SqlCommand(@"SELECT * From Eintraege 
-                                                             INNER JOIN Beziehung_Benutzer_Eintraege
-                                                             ON Beziehung_Benutzer_Eintraege.EintragsID = Eintraege.EintragsID
-                                                             WHERE BenutzerID = " + HttpContext.Current.User.Identity.Name, con))
+                                                             INNER JOIN Beziehung_OeffentlicheKalender_Eintraege
+                                                             ON Beziehung_OeffentlicheKalender_Eintraege.EintragsID = Eintraege.EintragsID
+                                                             WHERE KalenderID = " + Request.Params["id"], con))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -96,12 +94,5 @@ namespace Schulplaner
             ClientScript.RegisterStartupScript(GetType(), "hwa", "$('#calendar').fullCalendar({" + initCalendar + final + "})", true);
 
         }
-        [System.Web.Services.WebMethod]
-        public static void saySomething(string words)
-        {
-            // MessageBox.Show("Calling From Client Side");
-        }
-
-
     }
 }

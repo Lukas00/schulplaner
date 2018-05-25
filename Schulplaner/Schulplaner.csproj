@@ -149,6 +149,7 @@
     <Content Include="App_Data\SchulplanerDB_log.ldf">
       <DependentUpon>SchulplanerDB.mdf</DependentUpon>
     </Content>
+    <Content Include="error.aspx" />
     <Content Include="event.aspx" />
     <Content Include="neuerEintrag.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -184,8 +185,11 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="newCalendar.aspx" />
     <Content Include="newUser.aspx" />
+    <Content Include="oeffentlicherKalender.aspx" />
     <Content Include="profile.aspx" />
+    <Content Include="rektoren.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Model1.edmx">
@@ -342,6 +346,13 @@
     <Compile Include="Benutzer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="event.aspx.cs">
       <DependentUpon>event.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -396,12 +407,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="newCalendar.aspx.cs">
+      <DependentUpon>newCalendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="newCalendar.aspx.designer.cs">
+      <DependentUpon>newCalendar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="newUser.aspx.cs">
       <DependentUpon>newUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="newUser.aspx.designer.cs">
       <DependentUpon>newUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="oeffentlicherKalender.aspx.cs">
+      <DependentUpon>oeffentlicherKalender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oeffentlicherKalender.aspx.designer.cs">
+      <DependentUpon>oeffentlicherKalender.aspx</DependentUpon>
     </Compile>
     <Compile Include="OeffentlicherKalender.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -414,6 +439,13 @@
       <DependentUpon>profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rektoren.aspx.cs">
+      <DependentUpon>rektoren.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rektoren.aspx.designer.cs">
+      <DependentUpon>rektoren.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Rollen.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

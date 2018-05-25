@@ -37,12 +37,12 @@ namespace Schulplaner
                         try
                         {
                             benutzer.BenutzerID = reader.GetInt32(0);
-                            // benutzer.Vorname = reader.GetString(1).ToString();
-                            // benutzer.Nachname = reader.GetString(2);
+                            benutzer.Vorname = reader.GetString(1).ToString();
+                            benutzer.Nachname = reader.GetString(2);
                             benutzer.Passwort = reader.GetString(3);
                             benutzer.Email = reader.GetString(4);
-                            // benutzer.Klasse = reader.GetString(5);
-                            // benutzer.RollenID = reader.GetInt32(6);
+                            benutzer.Klasse = reader.GetString(5);
+                            benutzer.RollenID = reader.GetInt32(6);
                         }
                         catch (Exception e)
                         {

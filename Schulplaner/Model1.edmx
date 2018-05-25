@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SchulplanerDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SchulplanerDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Benutzer">
           <Key>
             <PropertyRef Name="BenutzerID" />
@@ -17,23 +17,6 @@
           <Property Name="Klasse" Type="nvarchar" MaxLength="50" />
           <Property Name="RollenID" Type="int" />
         </EntityType>
-        <!--Während der Generierung sind Fehler aufgetreten:
-Warnung 6013: Für Tabelle/Sicht 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\SCHULPLANER\SCHULPLANER\APP_DATA\SCHULPLANERDB.MDF.dbo.Beziehung_Benutzer_Eintraege' ist kein Primärschlüssel definiert, und es konnte kein gültiger Primärschlüssel abgeleitet werden. Diese Tabelle/Sicht wurde ausgeschlossen. Wenn Sie die Entität verwenden möchten, müssen Sie das Schema überprüfen, die richtigen Schlüssel hinzufügen und die Auskommentierung aufheben.
-        <EntityType Name="Beziehung_Benutzer_Eintraege">
-          <Property Name="BenutzerID" Type="int" />
-          <Property Name="EintragsID" Type="int" />
-        </EntityType>-->
-        <!--Während der Generierung sind Fehler aufgetreten:
-Warnung 6013: Für Tabelle/Sicht 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\SCHULPLANER\SCHULPLANER\APP_DATA\SCHULPLANERDB.MDF.dbo.Beziehung_Benutzer_OeffentlicherKalender' ist kein Primärschlüssel definiert, und es konnte kein gültiger Primärschlüssel abgeleitet werden. Diese Tabelle/Sicht wurde ausgeschlossen. Wenn Sie die Entität verwenden möchten, müssen Sie das Schema überprüfen, die richtigen Schlüssel hinzufügen und die Auskommentierung aufheben.
-        <EntityType Name="Beziehung_Benutzer_OeffentlicherKalender">
-          <Property Name="BenutzerID" Type="int" />
-        </EntityType>-->
-        <!--Während der Generierung sind Fehler aufgetreten:
-Warnung 6013: Für Tabelle/Sicht 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\SCHULPLANER\SCHULPLANER\APP_DATA\SCHULPLANERDB.MDF.dbo.Beziehung_OeffentlicheKalender_Eintraege' ist kein Primärschlüssel definiert, und es konnte kein gültiger Primärschlüssel abgeleitet werden. Diese Tabelle/Sicht wurde ausgeschlossen. Wenn Sie die Entität verwenden möchten, müssen Sie das Schema überprüfen, die richtigen Schlüssel hinzufügen und die Auskommentierung aufheben.
-        <EntityType Name="Beziehung_OeffentlicheKalender_Eintraege">
-          <Property Name="KalenderID" Type="int" />
-          <Property Name="EintragsID" Type="int" />
-        </EntityType>-->
         <EntityType Name="Eintraege">
           <Key>
             <PropertyRef Name="EintragsID" />
@@ -57,6 +40,8 @@ Warnung 6013: Für Tabelle/Sicht 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PR
             <PropertyRef Name="KalenderID" />
           </Key>
           <Property Name="KalenderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Beschreibung" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Rollen">
           <Key>
@@ -65,21 +50,6 @@ Warnung 6013: Für Tabelle/Sicht 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PR
           <Property Name="RollenID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Beschreibung" Type="nvarchar" MaxLength="200" />
         </EntityType>
-        <!--Während der Generierung sind Fehler aufgetreten:
-Fehler 6004: Auf die Tabelle 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\SCHULPLANER\SCHULPLANER\APP_DATA\SCHULPLANERDB.MDF.dbo.Beziehung_Benutzer_OeffentlicherKalender' wurde durch eine Beziehung verwiesen, die jedoch nicht gefunden wurde.
-        <Association Name="FK__Beziehung__Benut__267ABA7A" />-->
-        <!--Während der Generierung sind Fehler aufgetreten:
-Fehler 6004: Auf die Tabelle 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\SCHULPLANER\SCHULPLANER\APP_DATA\SCHULPLANERDB.MDF.dbo.Beziehung_Benutzer_Eintraege' wurde durch eine Beziehung verwiesen, die jedoch nicht gefunden wurde.
-        <Association Name="FK__Beziehung__Benut__2D27B809" />-->
-        <!--Während der Generierung sind Fehler aufgetreten:
-Fehler 6004: Auf die Tabelle 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\SCHULPLANER\SCHULPLANER\APP_DATA\SCHULPLANERDB.MDF.dbo.Beziehung_Benutzer_Eintraege' wurde durch eine Beziehung verwiesen, die jedoch nicht gefunden wurde.
-        <Association Name="FK__Beziehung__Eintr__2E1BDC42" />-->
-        <!--Während der Generierung sind Fehler aufgetreten:
-Fehler 6004: Auf die Tabelle 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\SCHULPLANER\SCHULPLANER\APP_DATA\SCHULPLANERDB.MDF.dbo.Beziehung_OeffentlicheKalender_Eintraege' wurde durch eine Beziehung verwiesen, die jedoch nicht gefunden wurde.
-        <Association Name="FK__Beziehung__Eintr__30F848ED" />-->
-        <!--Während der Generierung sind Fehler aufgetreten:
-Fehler 6004: Auf die Tabelle 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\SCHULPLANER\SCHULPLANER\APP_DATA\SCHULPLANERDB.MDF.dbo.Beziehung_OeffentlicheKalender_Eintraege' wurde durch eine Beziehung verwiesen, die jedoch nicht gefunden wurde.
-        <Association Name="FK__Beziehung__Kalen__300424B4" />-->
         <Association Name="FK__Eintraege__Erinn__2B3F6F97">
           <End Role="Erinnerungen" Type="Self.Erinnerungen" Multiplicity="0..1" />
           <End Role="Eintraege" Type="Self.Eintraege" Multiplicity="*" />
@@ -103,8 +73,7 @@ Fehler 6004: Auf die Tabelle 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJEC
             <End Role="Eintraege" EntitySet="Eintraege" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SchulplanerDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -145,6 +114,8 @@ Fehler 6004: Auf die Tabelle 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJEC
             <PropertyRef Name="KalenderID" />
           </Key>
           <Property Name="KalenderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Beschreibung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Rollen">
           <Key>
@@ -218,6 +189,8 @@ Fehler 6004: Auf die Tabelle 'C:\USERS\LUKAS\DOCUMENTS\VISUAL STUDIO 2017\PROJEC
           <EntitySetMapping Name="OeffentlicherKalender">
             <EntityTypeMapping TypeName="SchulplanerDBModel.OeffentlicherKalender">
               <MappingFragment StoreEntitySet="OeffentlicherKalender">
+                <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="KalenderID" ColumnName="KalenderID" />
               </MappingFragment>
             </EntityTypeMapping>

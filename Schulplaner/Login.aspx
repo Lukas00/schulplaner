@@ -7,6 +7,7 @@
             <asp:TextBox runat="server" ID="loginPass" type="password" placeholder="Passwort"></asp:TextBox>
             <asp:Button runat="server" OnClick="Log" Text="Login" />
             <asp:Label runat="server" ID="test"></asp:Label>
+            <a href="newUser.aspx">Registrieren</a>
         </div>
 
 </asp:Content>

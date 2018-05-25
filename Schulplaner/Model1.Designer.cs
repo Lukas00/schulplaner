@@ -1,4 +1,4 @@
-﻿// Die T4-Codegenerierung ist für Modell 'c:\users\lukas\documents\visual studio 2017\Projects\Schulplaner\Schulplaner\Model1.edmx' aktiviert. 
+﻿// Die T4-Codegenerierung ist für Modell 'C:\Users\Lukas\Documents\Visual Studio 2017\Projects\Schulplaner\Schulplaner\Model1.edmx' aktiviert. 
 // Um die Generierung von Legacycode zu aktivieren, ändern Sie den Wert der Designer-Eigenschaft 'Code Generation Strategy'
 // in 'Legacy ObjectContext'. Diese Eigenschaft wird im Eigenschaftenfenster angezeigt, wenn das Modell
 // im Designer geöffnet ist.
