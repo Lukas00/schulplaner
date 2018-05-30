@@ -14,7 +14,6 @@ namespace Schulplaner
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            test.Text = Request.Params["id"];
 
             int id;
             try
@@ -33,10 +32,7 @@ namespace Schulplaner
                 eintrag = getEvent(id);
             } catch (Exception ex)
             {
-                test.Text = "Fehler: " + ex;
             }
-
-            test.Text = eintrag.Titel;
 
             fillTextBoxes();
         }
@@ -44,12 +40,24 @@ namespace Schulplaner
         // Fill TextBoxes with the Information from the Database
         protected void fillTextBoxes()
         {
-            id_tb.Text = eintrag.EintragsID.ToString();
+            title.InnerText = "Eintrag: " + eintrag.Titel;
+            beschreibung.Text = eintrag.Beschreibung;
+            starttime.Text = eintrag.TerminStart.ToShortDateString() + " " + eintrag.TerminStart.ToShortTimeString();
+            endtime.Text = eintrag.TerminEnde.ToShortDateString() + " " + eintrag.TerminEnde.ToShortTimeString();
         }
 
-        protected void doSomething(object sender, EventArgs e)
+        protected void update(object sender, EventArgs e)
         {
-            test.Text = Request.Params["id"];
+            Console.WriteLine("Feature coming soon.");
+        }
+        protected void delete(object sender, EventArgs e)
+        {
+            Console.WriteLine("Feature coming soon.");
+        }
+
+        protected void goBack(object sender, EventArgs e)
+        {
+            Response.Redirect("~/");
         }
 
         protected Eintraege getEvent(int id)

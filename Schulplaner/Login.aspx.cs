@@ -45,7 +45,7 @@ namespace Schulplaner
                 // aCookie.Expires = DateTime.Now.AddDays(1);
                 // Response.Cookies.Add(aCookie);
 
-                Response.Cookies["userName"].Value = b.Vorname + " inbetween " + b.Nachname;
+                Response.Cookies["userName"].Value = b.Vorname + " " + b.Nachname;
                 Response.Cookies["userName"].Expires = DateTime.Now.AddDays(1);
 
                 test.Text = PW_and_ID[1];
@@ -60,6 +60,11 @@ namespace Schulplaner
 
             
 
+        }
+
+        protected void createUser(object sender, EventArgs e)
+        {
+            Response.Redirect("newUser");
         }
 
         protected String[] getPW(String name)

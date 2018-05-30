@@ -14,6 +14,11 @@ namespace Schulplaner
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (!HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("Login");
+            }
+
             HashSet<Eintraege> events = new HashSet<Eintraege>();
 
 
@@ -55,7 +60,7 @@ namespace Schulplaner
                 }
             }
 
-            string initCalendar = @"themeSystem: 'bootstrap3', selectable: true, header: {left: 'title', center: 'today prev,next', right: 'month agendaWeek list' }, 
+            string initCalendar = @"themeSystem: 'bootstrap3', selectable: true, header: {left: 'title', center: 'month agendaWeek list', right: 'today prev,next' }, 
                     navLink: true,
                     navLinkDayClick: function(date, jsEvent) {
                         console.log('day', date.format()); // date is a moment
@@ -65,10 +70,6 @@ namespace Schulplaner
                         window.location.replace('neuerEintrag');
                     },
                     eventClick: function(calEvent, jsEvent, view) {
-
-                    alert('Event: ' + calEvent.id);
-                    alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-                    alert('View: ' + view.name);
 
                     window.location.replace('event?id=' + calEvent.id);
 
@@ -95,11 +96,6 @@ namespace Schulplaner
             // ClientScript.RegisterStartupScript(GetType(), "hwa", "$('#calendar').fullCalendar({events: 'myEvents.json'})", true);
             ClientScript.RegisterStartupScript(GetType(), "hwa", "$('#calendar').fullCalendar({" + initCalendar + final + "})", true);
 
-        }
-        [System.Web.Services.WebMethod]
-        public static void saySomething(string words)
-        {
-            // MessageBox.Show("Calling From Client Side");
         }
 
 

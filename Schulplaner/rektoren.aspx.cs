@@ -15,6 +15,10 @@ namespace Schulplaner
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("Login");
+            }
             if (getUser.getBenutzer(Int32.Parse(HttpContext.Current.User.Identity.Name)).RollenID != 4) // RollenID == 4 --> User == Rektor / Wenn User kein Rektor wird ihm die Seite nicht angezeigt
             {
                 Response.Redirect("~/error?type=" + getUser.getBenutzer(Int32.Parse(HttpContext.Current.User.Identity.Name)).RollenID);

@@ -13,15 +13,6 @@ namespace Schulplaner {
     public partial class Contact {
         
         /// <summary>
-        /// adnkasd-Steuerelement
-        /// </summary>
-        /// <remarks>
-        /// Automatisch generiertes Feld
-        /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label adnkasd;
-        
-        /// <summary>
         /// Titel-Steuerelement
         /// </summary>
         /// <remarks>
@@ -29,15 +20,6 @@ namespace Schulplaner {
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Titel;
-        
-        /// <summary>
-        /// dasiudasnd-Steuerelement
-        /// </summary>
-        /// <remarks>
-        /// Automatisch generiertes Feld
-        /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label dasiudasnd;
         
         /// <summary>
         /// Beschreibung-Steuerelement
@@ -49,66 +31,57 @@ namespace Schulplaner {
         protected global::System.Web.UI.WebControls.TextBox Beschreibung;
         
         /// <summary>
-        /// Label3-Steuerelement
+        /// startdatum-Steuerelement
         /// </summary>
         /// <remarks>
         /// Automatisch generiertes Feld
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Calendar startdatum;
         
         /// <summary>
-        /// Label4-Steuerelement
+        /// startzeit-Steuerelement
         /// </summary>
         /// <remarks>
         /// Automatisch generiertes Feld
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.TextBox startzeit;
         
         /// <summary>
-        /// Label5-Steuerelement
+        /// enddatum-Steuerelement
         /// </summary>
         /// <remarks>
         /// Automatisch generiertes Feld
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Calendar enddatum;
         
         /// <summary>
-        /// Label6-Steuerelement
+        /// endzeit-Steuerelement
         /// </summary>
         /// <remarks>
         /// Automatisch generiertes Feld
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.TextBox endzeit;
         
         /// <summary>
-        /// ErinnerungHinzufuegen-Steuerelement
+        /// newEvent-Steuerelement
         /// </summary>
         /// <remarks>
         /// Automatisch generiertes Feld
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ErinnerungHinzufuegen;
+        protected global::System.Web.UI.WebControls.Button newEvent;
         
         /// <summary>
-        /// ErinnerungHinzufuegen0-Steuerelement
+        /// cancel-Steuerelement
         /// </summary>
         /// <remarks>
         /// Automatisch generiertes Feld
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ErinnerungHinzufuegen0;
-        
-        /// <summary>
-        /// ErinnerungHinzufuegen1-Steuerelement
-        /// </summary>
-        /// <remarks>
-        /// Automatisch generiertes Feld
-        /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ErinnerungHinzufuegen1;
+        protected global::System.Web.UI.WebControls.Button cancel;
     }
 }

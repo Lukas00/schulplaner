@@ -12,7 +12,6 @@ namespace Schulplaner
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            test.Text = HttpContext.Current.User.Identity.Name;
             fillValues(Int32.Parse(HttpContext.Current.User.Identity.Name));
         }
 
@@ -26,6 +25,20 @@ namespace Schulplaner
             Email.Text = b.Email;
             Klasse.Text = b.Klasse;
             RollenID.Text = b.RollenID.ToString();
+        }
+
+        protected void update(object sender, EventArgs e)
+        {
+            Console.WriteLine("Feature coming soon.");
+        }
+        protected void delete(object sender, EventArgs e)
+        {
+            Console.WriteLine("Feature coming soon.");
+        }
+
+        protected void goBack(object sender, EventArgs e)
+        {
+            Response.Redirect("~/");
         }
 
         protected Benutzer getUser(int id)
@@ -56,12 +69,12 @@ namespace Schulplaner
                         try
                         {
                             benutzer.BenutzerID = reader.GetInt32(0);
-                            // benutzer.Vorname = reader.GetString(1).ToString();
-                            // benutzer.Nachname = reader.GetString(2);
+                            benutzer.Vorname = reader.GetString(1).ToString();
+                            benutzer.Nachname = reader.GetString(2);
                             benutzer.Passwort = reader.GetString(3);
                             benutzer.Email = reader.GetString(4);
-                            // benutzer.Klasse = reader.GetString(5);
-                            // benutzer.RollenID = reader.GetInt32(6);
+                            benutzer.Klasse = reader.GetString(5);
+                            benutzer.RollenID = reader.GetInt32(6);
                         } catch(Exception e)
                         {
                             test.Text = e.ToString();

@@ -49,22 +49,22 @@ namespace Schulplaner {
         protected global::System.Web.UI.WebControls.TextBox nachname;
         
         /// <summary>
-        /// class-Steuerelement
+        /// klasse-Steuerelement
         /// </summary>
         /// <remarks>
         /// Automatisch generiertes Feld
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox @class;
+        protected global::System.Web.UI.WebControls.TextBox klasse;
         
         /// <summary>
-        /// role-Steuerelement
+        /// rolle-Steuerelement
         /// </summary>
         /// <remarks>
         /// Automatisch generiertes Feld
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox role;
+        protected global::System.Web.UI.WebControls.DropDownList rolle;
         
         /// <summary>
         /// B_register-Steuerelement
@@ -76,12 +76,21 @@ namespace Schulplaner {
         protected global::System.Web.UI.WebControls.Button B_register;
         
         /// <summary>
-        /// test-Steuerelement
+        /// Back-Steuerelement
         /// </summary>
         /// <remarks>
         /// Automatisch generiertes Feld
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label test;
+        protected global::System.Web.UI.WebControls.Button Back;
+        
+        /// <summary>
+        /// info-Steuerelement
+        /// </summary>
+        /// <remarks>
+        /// Automatisch generiertes Feld
+        /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label info;
     }
 }
